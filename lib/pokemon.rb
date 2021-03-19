@@ -18,4 +18,7 @@ class Pokemon
     Pokemon.new(id: id, name: name, type: type, db: db)
   end
 
+  def self.find(id)
+  end 
+
 end
