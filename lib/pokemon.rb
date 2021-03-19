@@ -19,6 +19,12 @@ class Pokemon
   end
 
   def self.find(id)
-  end 
+    sql = <<-SQL
+        SELECT *
+        FROM pokemon
+        WHERE id = ?
+        LIMIT 1
+    SQL
+  end
 
 end
