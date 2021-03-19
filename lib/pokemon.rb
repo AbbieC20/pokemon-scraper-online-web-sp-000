@@ -25,8 +25,9 @@ class Pokemon
         WHERE id = ?
         LIMIT 1
     SQL
-    db.execute(sql, id)
-    Pokemon.new(id: id, name: name, type: type, db: db)
+    DB[:conn].execute(sql, name).map do |row|
+      self.save(row)
+    end.first
   end
 
 end
