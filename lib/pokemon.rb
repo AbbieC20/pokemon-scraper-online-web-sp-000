@@ -18,7 +18,7 @@ class Pokemon
     Pokemon.new(id: id, name: name, type: type, db: db)
   end
 
-  def self.find(id)
+  def self.find(id, db)
     sql = <<-SQL
         SELECT *
         FROM pokemon
