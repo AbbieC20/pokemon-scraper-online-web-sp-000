@@ -25,7 +25,7 @@ class Pokemon
         WHERE id = ?
         LIMIT 1
     SQL
-    DB[:conn].execute(sql, name).map do |row|
+    db.execute(sql, id).map do |row|
       self.save(row)
     end.first
   end
